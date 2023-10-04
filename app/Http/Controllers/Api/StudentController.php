@@ -103,7 +103,7 @@ if($validate->fails())
                 File::delete('images/students/'.$get_student->roll_no.'.png');
             }
             $delete=DB::table('students')->where('id',$get_student->id)->delete();
-if($delete){
+         if($delete){
             $data=
             [
                 'status'=>200,
@@ -111,15 +111,15 @@ if($delete){
                 'student'=>$to_delete,
             ];
             return response()->json($data);
-        }else{
+         }else{
             $data=
             [
                 'status'=>404,
                 'message'=>'Opps! Something Went Wrong',
             ];
             return response()->json($data);
-        }
-        }else{
+         }
+         }else{
             $data=
             [
                 'status'=>300,
